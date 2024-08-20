@@ -2,7 +2,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CartList from './CartList';
 
-const CartModal = ({ items, show, handleClose, resetCart }) => {
+const CartModal = ({ items, show, handleClose, resetCart, removeItem }) => {
   return (
     <Modal
       backdrop="static"
@@ -16,7 +16,7 @@ const CartModal = ({ items, show, handleClose, resetCart }) => {
         <Modal.Title>Корзина</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <CartList items={items} />
+        <CartList removeItem={removeItem} items={items} />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={resetCart} variant="secondary">

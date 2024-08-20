@@ -42,6 +42,9 @@ const Shop = () => {
       setCart(newOrder);
     }
   };
+  const removeItem = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  }
 
   const resetCart = () => setCart([]);
 
@@ -58,7 +61,13 @@ const Shop = () => {
             :
             <Spinner />
           }
-          <CartModal resetCart={resetCart} handleClose={handleClose} show={show} items={cart} />
+          <CartModal
+            resetCart={resetCart}
+            handleClose={handleClose}
+            show={show}
+            items={cart}
+            removeItem={removeItem}
+          />
       </section>
     </main>
   );
