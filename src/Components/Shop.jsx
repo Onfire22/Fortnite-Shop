@@ -42,13 +42,41 @@ const Shop = () => {
       setCart(newOrder);
     }
   };
+
   const removeItem = (id) => {
     setCart(cart.filter((item) => item.id !== id));
-  }
+  };
+
+  const incrementQuantity = (id) => {
+    const newOrder = cart.map((cartItem) => {
+      if (cartItem.id === id) {
+        return {
+          ...cartItem,
+          quantity: cartItem.quantity + 1,
+        };
+      }
+      return cartItem;
+    });
+    setCart(newOrder);
+  };
+
+  const decrementQuantity = (id) => {
+    const newOrder = cart.map((cartItem) => {
+      if (cartItem.id === id) {
+        return {
+          ...cartItem,
+          quantity: cartItem.quantity - 1 >= 0 ? cartItem.quantity - 1 : 0,
+        };
+      }
+      return cartItem;
+    });
+    setCart(newOrder);
+  };
 
   const resetCart = () => setCart([]);
 
   const handleShow = () => setShow(true);
+
   const handleClose = () => setShow(false);
 
   return (
@@ -67,6 +95,8 @@ const Shop = () => {
             show={show}
             items={cart}
             removeItem={removeItem}
+            incrementQuantity={incrementQuantity}
+            decrementQuantity={decrementQuantity}
           />
       </section>
     </main>

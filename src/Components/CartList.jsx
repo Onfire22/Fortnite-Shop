@@ -1,6 +1,6 @@
 import CartItem from "./CartItem";
 
-const CartList = ({ items = [], removeItem }) => {
+const CartList = ({ items = [], removeItem, incrementQuantity, decrementQuantity }) => {
   const getTotalUnmount  = items.reduce((acc, item) => {
     return acc += item.price * item.quantity;
   }, 0);
@@ -18,6 +18,8 @@ const CartList = ({ items = [], removeItem }) => {
               key={id}
               id={id}
               removeItem={removeItem}
+              incrementQuantity={incrementQuantity}
+              decrementQuantity={decrementQuantity}
             />
           })}
         </ul>

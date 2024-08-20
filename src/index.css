@@ -56,3 +56,8 @@ code {
 .trash_can {
   cursor: pointer;
 }
+
+.controls_container {
+  display: flex;
+  gap: 10px;
+}
