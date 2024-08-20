@@ -1,7 +1,7 @@
 const Cart = ({ count = 0 }) => {
   return (
-    <div>
-      <i className="bi bi-bag">{count}</i>
+    <div className="cart_icon">
+      <i className="bi bi-bag h2">{count}</i>
     </div>
   );
 };

@@ -22,3 +22,12 @@ code {
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 15px;
 }
+
+.cart_icon {
+  width: 52px;
+  height: 38px;
+  position: fixed;
+  top: 60px;
+  right: 10px;
+  cursor: pointer;
+}
