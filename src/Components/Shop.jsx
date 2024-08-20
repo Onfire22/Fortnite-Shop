@@ -4,11 +4,13 @@ import axios from "axios";
 import { Spinner } from "react-bootstrap";
 import Cards from "./Cards";
 import Cart from "./Cart";
+import CartModal from "./CartModal";
 
 const Shop = () => {
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [cart, setCart] = useState([]);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
     setLoading(true);
@@ -28,7 +30,7 @@ const Shop = () => {
       };
       setCart([...cart, newItem]);
     } else {
-      const newOrder = cart.map((cartItem, index) => {
+      const newOrder = cart.map((cartItem) => {
         if (cartItem.id === item.id) {
           return {
             ...cartItem,
@@ -40,17 +42,23 @@ const Shop = () => {
       setCart(newOrder);
     }
   };
-  console.log(cart)
+
+  const resetCart = () => setCart([]);
+
+  const handleShow = () => setShow(true);
+  const handleClose = () => setShow(false);
+
   return (
     <main>
       <section className="container shop_section">
-      <Cart count={cart.length} />
-        {!loading
-          ?
-        <Cards addItem={addItem} cards={cards} />
-          :
-        <Spinner />
-        }
+        <Cart handleShow={handleShow} count={cart.length} />
+          {!loading
+            ?
+            <Cards addItem={addItem} cards={cards} />
+            :
+            <Spinner />
+          }
+          <CartModal resetCart={resetCart} handleClose={handleClose} show={show} items={cart} />
       </section>
     </main>
   );

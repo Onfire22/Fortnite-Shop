@@ -31,3 +31,19 @@ code {
   right: 10px;
   cursor: pointer;
 }
+
+.modal {
+  color: #fff;
+}
+
+.cart_list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cart_list-item {
+  padding: 3px;
+  border: 1px solid #3e88f7;
+}

@@ -1,6 +1,6 @@
-const Cart = ({ count = 0 }) => {
+const Cart = ({ count = 0, handleShow }) => {
   return (
-    <div className="cart_icon">
+    <div onClick={handleShow} className="cart_icon">
       <i className="bi bi-bag h2">{count}</i>
     </div>
   );
