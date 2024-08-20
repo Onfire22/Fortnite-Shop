@@ -41,9 +41,18 @@ code {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 0;
 }
 
 .cart_list-item {
-  padding: 3px;
+  padding: 10px;
   border: 1px solid #3e88f7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.trash_can {
+  cursor: pointer;
 }
