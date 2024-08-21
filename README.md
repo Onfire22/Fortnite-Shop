@@ -1,6 +1,6 @@
 # React Fortnite shop
 
-## Techonoly stack:
+## Techonolgy stack:
 * React
 * React Bootstrap
 * React ContextAPI
