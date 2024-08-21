@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { ShopContext } from '../context';
 
 const CartModal = () => {
-  const { show, closwModal, resetCart } = useContext(ShopContext);
+  const { show, cart, closwModal, resetCart } = useContext(ShopContext);
   return (
     <Modal
       backdrop="static"
@@ -25,7 +25,7 @@ const CartModal = () => {
         <Button onClick={resetCart} variant="secondary">
           Очистить корзину
         </Button>
-        <Button disabled variant="primary">Купить</Button>
+        <Button disabled={cart.length <= 0} variant="primary">Купить</Button>
       </Modal.Footer>
     </Modal>
   );

@@ -1,13 +1,13 @@
 const shopReducer = (state, { type, payload }) => {
   switch (type) {
-    case 'ADD INITIAL GOODS':
+    case 'ADD_INITIAL_GOODS':
       return {
         ...state,
         goods: payload || [],
         loading: false,
       };
     
-    case 'ADD ITEM':
+    case 'ADD_ITEM':
       const index = state.cart.findIndex(({ id }) => id === payload.id);
       if (index < 0) {
         const newItem = {
@@ -34,7 +34,7 @@ const shopReducer = (state, { type, payload }) => {
         cart: newOrder,
       };
 
-    case 'INCREMENT QUANTITY':
+    case 'INCREMENT_QUANTITY':
       const newOrderWithInc = state.cart.map((cartItem) => {
         if (cartItem.id === payload) {
           return {
@@ -49,7 +49,7 @@ const shopReducer = (state, { type, payload }) => {
         cart: newOrderWithInc,
       };
 
-    case 'DECREMENT QUANTITY':
+    case 'DECREMENT_QUANTITY':
       const newOrderWithDec = state.cart.map((cartItem) => {
         if (cartItem.id === payload) {
           return {
@@ -64,25 +64,25 @@ const shopReducer = (state, { type, payload }) => {
         cart: newOrderWithDec,
       };
 
-    case 'RESET CART':
+    case 'RESET_CART':
       return {
         ...state,
         cart: [],
       };
 
-    case 'REMOVE FROM CART':
+    case 'REMOVE_FROM_CART':
       return {
         ...state,
         cart: state.cart.filter((item) => item.id !== payload),
       };
 
-    case 'SHOW MODAL':
+    case 'SHOW_MODAL':
       return {
         ...state,
         show: true,
       };
 
-    case 'CLOSE MODAL':
+    case 'CLOSE_MODAL':
       return {
         ...state,
         show: false,
