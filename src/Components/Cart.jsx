@@ -5,7 +5,7 @@ const Cart = ({ count = 0 }) => {
   const { showModal } = useContext(ShopContext);
   return (
     <div onClick={showModal} className="cart_icon">
-      <i className="bi bi-bag h2">{count}</i>
+      <i className="bi bi-bag text-white h2">{count}</i>
     </div>
   );
 };

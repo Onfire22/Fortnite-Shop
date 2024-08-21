@@ -23,7 +23,7 @@ const Shop = () => {
   }, []);
 
   return (
-    <main>
+    <main className="main">
       <section className="container shop_section">
         <Cart count={cart.length} />
           {!loading

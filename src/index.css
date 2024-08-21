@@ -12,7 +12,12 @@ code {
     monospace;
 }
 
+.main {
+  background-color: rgb(56, 74, 90);
+}
+
 .shop_section {
+  padding: 15px;
   min-height: calc(100vh - 56px * 2);
 }
 
@@ -28,7 +33,7 @@ code {
   height: 38px;
   position: fixed;
   top: 60px;
-  right: 10px;
+  right: 90px;
   cursor: pointer;
 }
 
@@ -64,4 +69,10 @@ code {
 
 .animated {
   border: 3px solid rgb(37, 253, 102);
+}
+
+.card_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

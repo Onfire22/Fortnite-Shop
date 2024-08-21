@@ -6,11 +6,13 @@ import { ShopContext } from '../context';
 const Product = ({ name, price, description, background, id }) => {
   const { addItem } = useContext(ShopContext);
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card className="bg-dark text-white">
       <Card.Img className='card_img' variant="top" src={background} />
       <Card.Body>
         <Card.Title>{name}</Card.Title>
         <Card.Text>{description}</Card.Text>
+      </Card.Body>
+      <Card.Footer className='card_footer'>
         <Button onClick={() => addItem({
           name,
           description,
@@ -21,8 +23,8 @@ const Product = ({ name, price, description, background, id }) => {
         >
           Купить
         </Button>
-        <Card.Text>{price}</Card.Text>
-      </Card.Body>
+      <Card.Text>{price} токенов</Card.Text>
+      </Card.Footer>
     </Card>
   );
 };
