@@ -9,7 +9,7 @@ const Header = () => {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Githhub Repo: <a href="#login">Fortnite Shop</a>
+            Githhub Repo: <a href="https://github.com/Onfire22/Fortnite-Shop" rel="noreferrer" target='_blank'>Fortnite Shop</a>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>
