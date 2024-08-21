@@ -13,6 +13,7 @@ const initialState = {
 const ContextProvider = ({ children }) => {
   const [value, dispatch] = useReducer(shopReducer, initialState);
 
+  value.setInitialGoods = (data) => dispatch({ type: 'ADD INITIAL GOODS', payload: data });
   value.addItem = (item) => dispatch({type: 'ADD ITEM', payload: item});
   value.incQuantity = (id) => dispatch({ type: 'INCREMENT QUANTITY', payload: id });
   value.decQuantity = (id) => dispatch({ type: 'DECREMENT QUANTITY', payload: id });

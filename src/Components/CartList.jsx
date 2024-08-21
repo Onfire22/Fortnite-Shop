@@ -1,25 +1,24 @@
 import CartItem from "./CartItem";
+import { useContext } from "react";
+import { ShopContext } from "../context";
 
-const CartList = ({ items = [], removeItem, incrementQuantity, decrementQuantity }) => {
-  const getTotalUnmount  = items.reduce((acc, item) => {
+const CartList = () => {
+  const { cart = []} = useContext(ShopContext);
+  const getTotalUnmount  = cart.reduce((acc, item) => {
     return acc += item.price * item.quantity;
   }, 0);
-
   return (
-    items.length > 0
+    cart.length > 0
       ?
       <>
         <ul className='cart_list'>
-          {items.map(({ name, quantity, price, id }) => {
+          {cart.map(({ name, quantity, price, id }) => {
             return <CartItem
               name={name}
               quantity={quantity}
               price={price}
               key={id}
               id={id}
-              removeItem={removeItem}
-              incrementQuantity={incrementQuantity}
-              decrementQuantity={decrementQuantity}
             />
           })}
         </ul>

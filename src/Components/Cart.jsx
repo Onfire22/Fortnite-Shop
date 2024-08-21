@@ -1,6 +1,10 @@
-const Cart = ({ count = 0, handleShow }) => {
+import { useContext } from "react";
+import { ShopContext } from "../context";
+
+const Cart = ({ count = 0 }) => {
+  const { showModal } = useContext(ShopContext);
   return (
-    <div onClick={handleShow} className="cart_icon">
+    <div onClick={showModal} className="cart_icon">
       <i className="bi bi-bag h2">{count}</i>
     </div>
   );

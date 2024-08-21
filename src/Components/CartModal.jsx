@@ -1,14 +1,17 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import CartList from './CartList';
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 
-const CartModal = ({ items, show, handleClose, resetCart, removeItem, incrementQuantity, decrementQuantity }) => {
+const CartModal = () => {
+  const { show, closwModal, resetCart } = useContext(ShopContext);
   return (
     <Modal
       backdrop="static"
       keyboard={false}
       show={show}
-      onHide={handleClose}
+      onHide={closwModal}
       data-bs-theme="dark"
       className='modal'
     >
@@ -16,7 +19,7 @@ const CartModal = ({ items, show, handleClose, resetCart, removeItem, incrementQ
         <Modal.Title>Корзина</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <CartList incrementQuantity={incrementQuantity} decrementQuantity={decrementQuantity} removeItem={removeItem} items={items} />
+        <CartList />
       </Modal.Body>
       <Modal.Footer>
         <Button onClick={resetCart} variant="secondary">

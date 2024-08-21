@@ -1,9 +1,12 @@
 import Product from "./Card";
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 
-const Cards = ({ cards = [], addItem }) => {
+const Cards = () => {
+  const { goods = [] } = useContext(ShopContext);
   return (
     <div className="shop">
-      {cards.length > 0 && cards.map(({ displayName, section, price, displayAssets, offerId }) => {
+      {goods.length > 0 && goods.map(({ displayName, section, price, displayAssets, offerId }) => {
         return (
         <Product 
           key={offerId}
@@ -12,7 +15,6 @@ const Cards = ({ cards = [], addItem }) => {
           price={price.regularPrice}
           description={section.category}
           background={displayAssets[0].full_background}
-          addItem={addItem}
         />
       )})}
     </div>

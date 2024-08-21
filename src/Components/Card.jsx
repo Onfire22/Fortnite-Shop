@@ -1,7 +1,10 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 
-const Product = ({ name, price, description, background, id, addItem }) => {
+const Product = ({ name, price, description, background, id }) => {
+  const { addItem } = useContext(ShopContext);
   return (
     <Card style={{ width: '18rem' }}>
       <Card.Img className='card_img' variant="top" src={background} />
@@ -13,7 +16,11 @@ const Product = ({ name, price, description, background, id, addItem }) => {
           description,
           price,
           id,
-        })} variant="primary">Купить</Button>
+        })}
+        variant="primary"
+        >
+          Купить
+        </Button>
         <Card.Text>{price}</Card.Text>
       </Card.Body>
     </Card>
