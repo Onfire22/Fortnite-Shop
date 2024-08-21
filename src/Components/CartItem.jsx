@@ -1,6 +1,10 @@
 import Button from 'react-bootstrap/Button';
+import { useContext } from 'react';
+import { ShopContext } from '../context';
 
 const CartItem = ({ id, name, quantity, price, removeItem, incrementQuantity, decrementQuantity }) => {
+  const {example} = useContext(ShopContext);
+  console.log(example);
   return (
     <li className='cart_list-item'>
       {name} x{quantity} = {quantity * price} 

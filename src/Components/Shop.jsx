@@ -21,7 +21,7 @@ const Shop = () => {
       });
   }, []);
 
-  const addItem = (item) => {
+  const addItem = (item) => { //added
     const index = cart.findIndex(({ id }) => id === item.id);
     if (index < 0) {
       const newItem = {
@@ -43,11 +43,11 @@ const Shop = () => {
     }
   };
 
-  const removeItem = (id) => {
+  const removeItem = (id) => { //added
     setCart(cart.filter((item) => item.id !== id));
   };
 
-  const incrementQuantity = (id) => {
+  const incrementQuantity = (id) => { //added
     const newOrder = cart.map((cartItem) => {
       if (cartItem.id === id) {
         return {
@@ -60,7 +60,7 @@ const Shop = () => {
     setCart(newOrder);
   };
 
-  const decrementQuantity = (id) => {
+  const decrementQuantity = (id) => { //added
     const newOrder = cart.map((cartItem) => {
       if (cartItem.id === id) {
         return {
@@ -73,11 +73,11 @@ const Shop = () => {
     setCart(newOrder);
   };
 
-  const resetCart = () => setCart([]);
+  const resetCart = () => setCart([]); //added
 
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShow(true); //added
 
-  const handleClose = () => setShow(false);
+  const handleClose = () => setShow(false); //added
 
   return (
     <main>

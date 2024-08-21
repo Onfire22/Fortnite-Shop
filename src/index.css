@@ -61,3 +61,7 @@ code {
   display: flex;
   gap: 10px;
 }
+
+.animated {
+  border: 3px solid rgb(37, 253, 102);
+}
