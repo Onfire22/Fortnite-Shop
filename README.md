@@ -5,6 +5,9 @@
 * React Bootstrap
 * React ContextAPI
 
+### Description
+Simple sibgle page shop with adding goods in cart
+
 ### Setup
 `npm install`
 
